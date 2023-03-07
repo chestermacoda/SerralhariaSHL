@@ -1,0 +1,68 @@
+<?php
+include_once "../../connect/config.php";
+
+$saida = '';
+
+if(isset($_POST['registo'])){
+    $id = $_POST['registo'];
+    $cmd = $pdo->prepare("SELECT * FROM funcionarios  LIMIT $id");
+    $cmd->execute();
+    $material = $cmd->fetchAll();
+    $time = date( 'H:i:s');
+    $data = date('Y-m-d' );
+    foreach($material as $k ){
+        $saida .='
+            
+                <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>'.$k['nome'].' '.$k['apelido'].'</td>
+                <td>'.$data.' '.$time.'</td>
+                <td title="Detalhes do Produto"><a href="datelhes.php?id='.$k['id'].'" class="btn btn-outline-secondary presenca" data-value="'.$data.' '.$time.'" id="'.$k['id'].'" data-id="present"><i class="fa-solid fa-check"></i></a></td>
+            </tr>
+            
+        
+        ';
+    }
+
+}else{
+    // $data = date('Y-m-d' );
+    $data = '2023-01-16';
+    
+    $cmd = $pdo->prepare("SELECT f.id,p.status, f.nome,f.apelido,p.data FROM `presenca` p RIGHT JOIN funcionarios f ON p.id_funcionario = f.id    LIMIT 5");
+    $cmd->execute();
+    $dados = $cmd->fetchAll();
+    $time = date( 'H:i:s');
+    
+     
+    foreach($dados as $k ){
+        $satus = $k['status'];
+        $style = '';
+        $disabe ='';
+        $checked ='';
+        if($satus == "present"){
+            $style .='bg-success text-white'; 
+            $disabe .= 'disabled';
+            $checked .= 'checked';
+            
+            $id = '';
+         
+        }else{
+            $style = '';
+            $disabe ='';
+            $checked ='';
+            $id = $k['id'];
+        }
+        $saida .='
+        <tr class="'.$style.'">
+            <td><input type="checkbox" name="select[]" value="'.$id.'" '.$checked.' '.$disabe.' ></td>
+            <td>'.$k['nome'].' '.$k['apelido'].'</td>
+            <td>'.$data.' '.$time.'</td>
+            <td title="Presença do Funcionario"><button '.$disabe.' class="btn btn-outline-secondary presenca" data-value="'.$data.' '.$time.'" id="'.$k['id'].'" data-id="present" ><i class="fa-solid fa-check"></i></button></td>
+        </tr>
+        
+        ';
+    }
+}
+
+echo $saida;
+?>

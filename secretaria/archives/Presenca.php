@@ -1,0 +1,121 @@
+<?php
+include_once "../../connect/config.php";
+
+$saida = '';
+
+if (isset($_POST['registo'])) {
+    $id = $_POST['registo'];
+    $data = date('Y-m-d');
+    $timeOut = date("H:i:s");
+
+
+    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where  data = '$data'  LIMIT $id");
+
+    $dado = $cmd->fetchAll();
+
+    if ($cmd->rowCount() > 0) {
+        $style = '';
+        $buttonSaida = '';
+
+
+
+        foreach ($dado as $d) {
+            $disable = '';
+            if ($d['Entrada'] > 0) {
+                $style = 'bg-info text-white';
+                $btnSaida = '<button class="btn btn-outline-primary  saida" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button>';
+                $disable = 'disabled';
+            } else {
+                $style = '';
+                $btnSaida = '';
+            }
+
+            if ($d['Saida'] > 0) {
+                $style = 'bg-success text-white';
+                $btnSaida = '<button ' . $disable . ' class="btn btn-outline-primary  saida" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button>';
+                $disable = 'disabled';
+            }
+
+            $saida .= '
+            <tr class="' . $style . '">
+                    <td><input type="checkbox" name="select[]" id="" value="' . $d['id'] . '">
+                      </td>
+                    <td>' . $d['nome'] . '</td> 
+                    <td>' . $d['data'] . '</td>
+                    <td><button ' . $disable . ' class="btn btn-outline-primary  entrada" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button></td>
+                    <td>' . $btnSaida . '</td>
+                    <td><button class="btn btn-primary"><a href=""><i class="fa-solid fa-edit"></i></a></button></td>
+                </tr>
+            
+            ';
+        }
+    } else {
+        $saida .= '
+            <tr class="bg-dark text-white">
+                 <td colspan="6">Adiciona a Lista de Presença A cima</td>
+            </tr>
+            
+            ';
+    }
+} else {
+    $data = date('Y-m-d');
+    $timeOut = date("H:i:s");
+
+
+
+
+    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where data = '$data' LIMIT 5");
+    $dado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+    if ($cmd->rowCount() > 0) {
+        $style = '';
+        $buttonSaida = '';
+
+
+
+        foreach ($dado as $d) {
+            $disable = '';
+            if ($d['Entrada'] > 0) {
+                $style = 'bg-info text-white';
+                $btnSaida = '<button disabled class="btn btn-outline-primary  saida" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button>';
+                $disable = 'disabled';
+            } else {
+                $style = '';
+                $btnSaida = '';
+            }
+
+            if ($d['Saida'] > 0) {
+                $style = 'bg-success text-white';
+                $btnSaida = '<button ' . $disable . ' class="btn btn-outline-primary  saida" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button>';
+                $disable = 'disabled';
+            }
+
+            $saida .= '
+                <tr class="' . $style . '">
+                    <td><input type="checkbox" name="select[]" id="" value="' . $d['id'] . '">
+                      </td>
+                    <td>' . $d['nome'] . '</td> 
+                    <td>' . $d['data'] . '</td>
+                    <td><button disabled  class="btn btn-outline-primary  entrada" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button></td>
+                    <td>' . $btnSaida . '</td>
+                    <td><a href="EditarPresenca.php?id=' . $d['id'] . '&data=' . $d['data'] . '" class="btn btn-outline-primary"><i class="fa-solid fa-edit"></i></a></td>
+                </tr>
+                
+                ';
+        }
+    } else {
+        $saida .= '
+                <tr class="bg-dark text-white">
+                     <td colspan="6">Adiciona a Lista de Presença A cima</td>
+                </tr>
+                
+                ';
+    }
+}
+
+echo $saida;
+
+
+ 

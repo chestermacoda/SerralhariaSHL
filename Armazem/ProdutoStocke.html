@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrador</title>
+    <link rel="stylesheet" href="../public/css/admin.css">
+    <link rel="stylesheet" href="../public/css/tabelas.css">
+    <link rel="stylesheet" href="../public/fontawesome-free-6.2.1-web/css/all.min.css">
+</head>
+<body>
+    <div class="conteiner">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#"><img src="../public/images/1672901618319.png" alt=""></a>
+                </div>
+                                <ul>
+                                <li><a href="index.php"><i class="fa-solid fa-house hd"></i>Inicio</a></li>
+                                <li class="Product"><a href="#"><i class="fa-solid fa-toolbox hd"></i>Material<img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                                    <div class="produtos p"> 
+                                        <ul>
+                                            <li><a href="produtos.php"><i class="fa-solid fa-gear hd"></i>Gerir Material</a></li>
+                                            <li><a href="ListaSaidas.php"><i class="fa-solid fa-list-check hd"></i>Gerir Saidas</a></li>
+                                        </ul>
+                                    </div>
+                                
+                                <li class="tools"><a href="#"><i class="fa-solid fa-tools hd"></i>Ferramentas <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                                    <div class="produtos t">
+                                        <ul>
+                                            <li><a href="Ferramentas.php"><i class="fa-solid fa-wrench hd"></i>Gerir Ferramenta</a></li>
+                                            <li><a href="requisita.php"><img src="../public/images/produ.png" alt="">Requisitar Ferramenta</a></li>
+                                        </ul>
+                                    </div>
+                                <li class="supliers"><a href="#"><i class="fa-solid fa-coins hd"></i>Fornecedores <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                                    <div class="produtos f">
+                                        <ul>
+                                            <li><a href="#"><img src="../public/images/produ.png" alt="">Add Fornecedores</a></li>
+                                            <li><a href="#"><img src="../public/images/produ.png" alt="">Gerir Fornecedores</a></li>
+                                        </ul>
+                                    </div>
+                                <li class="supliers"><a href="#"><i class="fa-solid fa-list-squares hd"></i>Relatorio <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                                    <div class="produtos f">
+                                        <ul>
+                                            <li><a href="#"><img src="../public/images/produ.png" alt="">Material</a></li>
+                                            <li><a href="#"><img src="../public/images/produ.png" alt="">Ferramenta</a></li>
+                                        </ul>
+                                    </div>
+                                <li><a href="#"><i class="fa-solid fa-bell hd"></i>Notificacoes<?php if($not){ ?><label><?=$not?></label><?php }?></a></li>
+                            </ul>
+                        </nav>
+        </header>
+        <main>
+            <div class="head">
+                <div class="menu">
+                   <!-- <button class="hmburguer"><img src="../public/images/drop.png" alt=""></button> -->
+                   <button class="hmburguer"><i class="fa-solid fa-bars icon"></i></button>
+               </div>
+                <div class="user1">
+                   <div class="user notification ">
+                       <button class="us notif comment"><i class="fa-solid fa-comment not"></i><p>0</p></button>
+                       <div class="describe">
+                        <a href="#">
+                         <div class="text">
+                             <p class="date">Date: 12-01-2023</p>
+                             <p>Eletroides Stocke Baixo</p>
+                             <!-- <p>Quantity: 6</p> -->
+                         </div>
+                        </a>
+                        <a href="#">
+                         <div class="text">
+                             <p class="date">Date: 12-01-2023</p>
+                             <p>Carrinha em falta</p>
+                             <!-- <p>Quantity: 6</p> -->
+                         </div>
+                        </a>
+                        <a href="#" class="all">
+                         <p>ver todos</p>
+                        </a>
+                    </div>
+                   </div>
+                   <div class="user notification ">
+                       <button class="us notif bell"><i class="fa-solid fa-bell not"></i><p><?=$not?></p></button>
+                       <div class="descricao">
+                           <a href="#">
+                            <div class="text">
+                                <p class="date">Date: 12-01-2023</p>
+                                <p>Eletroides Stocke Baixo</p>
+                                <!-- <p>Quantity: 6</p> -->
+                            </div>
+                           </a>
+                           <a href="#">
+                            <div class="text">
+                                <p class="date">Date: 12-01-2023</p>
+                                <p>Carrinha em falta</p>
+                                <!-- <p>Quantity: 6</p> -->
+                            </div>
+                           </a>
+                           <a href="#" class="all">
+                            <p>ver todos</p>
+                           </a>
+                       </div>
+                   </div>
+                   <div class="user out">
+                       <button class="name"><p>Langa</p><i class="fa-solid fa-angle-down"></i></button>
+                       <ul>
+                           <li><a href="#">Sair</a></li>
+                           <li><a href="#">Perfil</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+            <section>
+                <h2>Gerir Stocke Produtos</h2>
+                <div id="menu">
+                    
+                </div>
+                <div class="requisicoes">
+                    <div class="tabela">
+                    <table>
+                        <tr class="top">
+                            <td>ID</td>
+                            <td>Nome Produto</td>
+                            <td>Tipo</td>
+                            <td>MEdida</td>
+                            <td>Qunantidade</td>
+                            <td colspan="2">Action</td>
+                        </tr>
+                        <tr>
+                            <td>143</td>
+                            <td>Tubos Metalica</td>
+                            <td>Quadrado</td>
+                            <td>60m</td>
+                            <td>150</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Tubos Metalica</td>
+                            <td>Quadrado</td>
+                            <td>60m</td>
+                            <td>150</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Tubos Metalica</td>
+                            <td>Quadrado</td>
+                            <td>60m</td>
+                            <td>150</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                    </table>
+                </div>
+
+                </div>
+            </section>
+        </main>
+        </div>
+        <script src="../public/js/jquery.js"></script>
+        <script src="../public/js/admin.js"></script>
+    </body>
+    </html>

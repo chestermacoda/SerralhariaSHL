@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "opensas";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+} 
+*{
+    font-family: "opensas";
+    /* font-family: "roboto"; */
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    width:100%;
+}
+header{
+    width: 100%;
+    display: flex;
+     
+    padding: 10px 80px;
+}
+nav{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+.top img{
+    /* box-shadow: 0px 0px 4px #eee; */
+    max-height: 200px;
+    width: 200px;
+}
+.localizacao p{
+    line-height: 1.5;
+}
+main{
+    width: 100%;
+}
+.User{
+    width: 94%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.Titulo{
+    text-align: center;
+}
+.Titulo h3{ 
+    font-family: 'roboto';
+    font-size: 22px;
+    border-radius: 6px;
+}
+thead tr{
+    font-weight: bold;
+}
+.dados{
+    display: flex;
+    text-align: center;
+}
+ 
+.pagamento{
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.pagamento h5{
+    margin: 20px 0 8px 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+p.total{
+    font-size: 16px;
+}
+ 
+tbody tr td{
+    border-bottom: none;
+}

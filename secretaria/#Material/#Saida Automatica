@@ -1,0 +1,12 @@
+
+$data = date('Y-m-d');
+    $cmd = $pdo->prepare("SELECT * FROM presenca where data != '$data' and Entrada != ''");
+    $cmd->execute();
+    $dados = $cmd->fetchAll();
+        if($cmd->rowCount() > 0){
+            foreach($dados as $d){
+                $id = $d['id'];
+                $presenca = $sairr;
+                $cmd = $pdo->query("UPDATE presenca SET Saida = '$presenca' where id = '$id'");
+        }
+}

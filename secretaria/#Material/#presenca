@@ -1,0 +1,98 @@
+<?php
+include_once "../../connect/config.php";
+
+$saida = '';
+
+if(isset($_POST['registo'])){
+    $id = $_POST['registo'];
+    $data = date('Y-m-d' );
+
+    
+    $cmd = $pdo->prepare("SELECT * FROM funcionarios  LIMIT '$id'");
+    $cmd->execute();
+    $dados = $cmd->fetchAll();
+    $time = date( 'H:i:s');
+    
+     
+    foreach($dados as $k ){
+        $v = $k['id'];
+        $quer = $pdo->query("SELECT * FROM presenca Where id_funcionario = '$v' and data = '$data'");
+        $style = '';
+        $disabe ='';
+        $checked ='';
+        if($quer->rowCount() > 0){
+            $style .='bg-success text-white'; 
+            $disabe .= 'disabled';
+            $checked .= 'checked';
+            
+            $id = '';
+         
+        }else{
+            $style = '';
+            $disabe ='';
+            $checked ='';
+            $id = $k['id'];
+        }
+        $saida .='
+        <tr class="'.$style.'">
+            <td><input type="checkbox" name="select[]" value="'.$id.'" '.$checked.' '.$disabe.' ></td>
+            <td>'.$k['nome'].' '.$k['apelido'].'</td>
+            <td>'.$data.' '.$time.'</td>
+            <td title="Presença do Funcionario"><button '.$disabe.' class="btn btn-outline-secondary presenca" data-value="'.$data.' '.$time.'" id="'.$k['id'].'" data-id="present" ><i class="fa-solid fa-check"></i></button></td>
+        </tr>
+        
+        ';
+    }
+ 
+}else{
+    $data = date('Y-m-d' );
+    $timeOut = date("H:i:s");
+    $cmd = $pdo->prepare("SELECT * FROM funcionarios  LIMIT 5");
+    $cmd->execute();
+    $dados = $cmd->fetchAll();
+    $time = date( 'H:i:s');
+    
+     
+    foreach($dados as $k ){
+        $id = $k['id'];
+        
+        $quer = $pdo->query("SELECT * FROM presenca Where id_funcionario = '$id' and data = '$data' and Entrada != '' ");
+        $style = '';
+        $disabe ='';
+        $checked ='';
+        $out='';
+        if($quer->rowCount() > 0){
+            $style .='bg-secondary text-white'; 
+            $out= '<button '.$disabe.' class="btn btn-primary saida" '.$time.'" id="'.$k['id'].'" data-id="'.$timeOut.'" ><i class="fa-solid fa-check"></i></button>';
+        }else{
+            $style = '';
+            $disabe ='';
+            $checked ='';
+            $id = $k['id']; 
+            $out='';
+        }
+
+        $ou = $pdo->query("SELECT * FROM presenca Where id_funcionario = '$id' and data = '$data' and Saida != '' ");
+        if($ou->rowCount() > 0){
+            $disabe .= 'disabled';
+            $checked .= 'checked';
+            $id = '';
+            $style .='bg-success text-white'; 
+            $out= '<button '.$disabe.' class="btn btn-primary saida" '.$time.'" id="'.$k['id'].'" data-id="'.$timeOut.'" ><i class="fa-solid fa-check"></i></button>';
+        } 
+
+        $saida .='
+        <tr class="'.$style.'">
+            <td><input type="checkbox" name="select[]" value="'.$id.'" '.$checked.' '.$disabe.' ></td>
+            <td>'.$k['nome'].'</td>
+            <td>'.$data.' '.$time.'</td>
+            <td title="Presença do Funcionario"><button '.$disabe.' class="btn btn-outline-secondary entrada" data-value="'.$data.' '.$time.'" id="'.$k['id'].'" data-id="'.$timeOut.'" ><i class="fa-solid fa-check"></i></button></td>
+            <td>'.$out.'</td>
+        </tr>
+        
+        ';
+    }
+}
+
+echo $saida;
+?>

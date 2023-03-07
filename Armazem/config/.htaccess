@@ -1,0 +1,2 @@
+#desabilitar a listagem de pastas do servidor.
+Options -Indexes 

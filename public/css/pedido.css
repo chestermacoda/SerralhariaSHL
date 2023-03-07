@@ -1,0 +1,46 @@
+
+/*    Pedidos personalisados */
+.nome{
+    width: 100%;
+    display: block;
+    padding: 10px;
+}
+.nome a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+.nome .pedido{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgb(124, 124, 124);
+    justify-content: center;
+    align-items: center;
+}
+.nome .pedido .top{
+    font-weight: 600;
+}
+.nome .pedido p{
+     min-width: 25%;
+     padding: 4px;
+     text-align: center;
+     /* background-color: rebeccapurple; */
+}
+ 
+.nome a .pedido{
+    /*     */
+    color: rgb(0, 0, 0);
+}
+.nome a .pedido:hover{
+    background-color: rgb(168, 168, 168);
+}
+.nome .pedido button,
+.nome a .pedido button{
+    border: none;
+    background: none;
+    padding: 4px;
+    box-shadow: 0px 0px 4px #eee;
+    background-color: rgba(255, 0, 0, 0.664);
+    border-radius: 4px;
+    color: #fff;
+}

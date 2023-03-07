@@ -1,0 +1,682 @@
+@font-face {
+    font-family: "opensas";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+} 
+*{
+    font-family: "opensas";
+    /* font-family: "roboto"; */
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    width: 100%;
+    background-color:  #f9fcf9;
+}
+.conteiner{
+    width: 100%;
+    display: flex;
+}
+header{
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(0, 140, 255);
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+nav{
+    width: 100%;
+    display: block;
+}
+nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.219);    
+}
+nav .logo img{
+    height: 55px;
+    width: 130px;
+}
+/* ======================nav ul ================================ */
+nav ul{
+    display: block;
+    list-style: none;
+    width: 100%;
+    padding: 20px 0;
+}
+nav ul li{
+    width: 100%;
+  
+}
+nav ul li a{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+}
+nav ul li a label{
+    margin-left: 10px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 3px 4px;
+    font-size: 12px;
+    align-items: center;
+}
+nav ul li a img{
+    height: 24px;
+    margin-right: 10px;
+}
+nav ul li a .hd{
+    font-size: 24px; 
+    color: #000;
+    margin-right: 10px;
+}
+nav ul li a img.down{
+    height: 12px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+nav ul li a:hover{
+    background-color: rgb(0, 174, 255);
+    color: #fff;
+}
+/* =========================================submenu========================================== */
+.produtos {
+    width: 100%;
+    display: none;
+}
+.produtos ul{
+    display: block;
+    list-style: none;
+    /* width: 100%; */
+    padding: 0px;
+    background-color: rgb(0, 174, 255);
+   
+}
+.produtos ul li a{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+
+}
+ 
+.produtos ul li a img{
+    height: 20px;
+    margin-right: 10px;
+}
+.produtos ul li a:hover{
+    background-color: rgb(0, 195, 255);
+    color: #fff;
+}
+
+/* =========================================main head ======================================= */
+main{ 
+    width: 80%;
+    margin-left: 20%;
+     
+}
+section{
+    margin-top: 50px;
+    padding: 10px;
+}
+main .head{
+    width: 80%;
+    background-color: rgb(0, 174, 255);
+    /* box-shadow: 0px 0px 4px #eee; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    top: 0;
+    right: 0;
+  
+}
+.headr .menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+}
+.headr .menu button{
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.pesquisa{
+    display: flex;
+}
+.head .menu img{
+    height: 75px;
+
+}
+.head .menu button{
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 11px;
+}
+.head .menu button .icon{
+    font-size: 40px;
+}
+.head .user1{
+    display: flex;
+}
+.head .user1 .not{
+    font-size: 17px;
+}
+.head .user1 button p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.head .user{
+    display: block;
+    position: relative;
+    margin-right: 20px;
+}
+ 
+.head .user button{
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.user button p{
+    margin: 0 10px;
+}
+ 
+.user button img{
+    height: 12px;
+} 
+
+.ul{
+    position: absolute;
+    width: 100px;
+    background-color: rgb(0, 174, 255);
+    right: 0;
+    top: 40px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: none;
+}
+.ul a{
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 0;
+    color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.ul a:hover{
+    background-color:rgba(56, 190, 252, 0.664);
+    color: #fff;
+}
+/* ================ */
+.notification{
+    position: relative;
+}
+
+/* ======================= */
+.descricao{
+    position: absolute;
+    width: 300px;
+    background-color: rgb(0, 174, 255);
+    right: 0;
+    top: 40px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: none;
+}
+.descricao a{
+    text-decoration: none;
+    width: 100%;
+}
+.descricao a .text{
+    padding: 4px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.582);
+}
+.descricao a .text p.date{
+    font-size: 14px;
+    color: #eee;
+    margin-bottom: 4px;
+}
+.descricao a .text p{
+    color: #fff;
+    font-size: 16;
+    margin-bottom: 4px;
+}
+.descricao a.all{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 6px 0;
+    color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+ 
+.descricao a .text:hover{
+    background-color:rgba(56, 190, 252, 0.664);
+}
+.descricao a.all:hover{
+    background-color:rgba(108, 203, 247, 0.705);
+}
+
+/* ============================Menssege =============*/
+.describe{
+    position: absolute;
+    width: 300px;
+    background-color: rgb(0, 174, 255);
+    right: 0;
+    top: 40px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: none;
+}
+.describe a{
+    text-decoration: none;
+    width: 100%;
+    /* border-bottom: 1px solid #eee; */
+}
+.describe a .text{
+    padding: 4px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.582);
+}
+.describe a .text p.date{
+    font-size: 14px;
+    color: #eee;
+    margin-bottom: 4px;
+}
+.describe a .text p{
+    color: #fff;
+    font-size: 16;
+    margin-bottom: 4px;
+}
+.describe a.all{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 6px 0;
+    color: #fff;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+ 
+.describe a .text:hover{
+    background-color:rgba(56, 190, 252, 0.664);
+}
+.describe a.all:hover{
+    background-color:rgba(108, 203, 247, 0.705);
+}
+
+/* ============================cards dos ==================================== */
+
+section .welcome{
+    width: 100%;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.welcome p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.detalhes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+   
+}
+.detalhes a {
+    /* background-color: rgba(0, 132, 255, 0.459); */
+    box-shadow: 0px 0px 4px #a7a7a7;
+    margin: 10px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.952);
+    height: 170px;
+    width: 280px;
+    border-radius: 8px;
+    text-decoration: none;
+   
+}
+
+ a .top{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    /* font-size: 24px; */
+    padding: 10px;
+ }
+ a .top .img{
+    margin-right: 10px;
+ }
+ a .top .img img{
+    height: 90px;
+ }
+ a .top .img i{
+    font-size: 80px;
+    margin: 14px 6px;
+    color: rgb(0, 132, 255);
+ }
+ .desc{
+    text-align: center;
+    margin-left: 10px;
+ }
+ .desc h4{
+    font-size: 18px;
+ }
+ .desc p{
+    font-size: 28px;
+    margin-top: 18px;
+   
+ }
+ a .bottom{
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #eee; */
+    background-color:rgb(0, 140, 255);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+ }
+ a .bottom p{
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "roboto";
+ }
+ .menu button.close{
+    display: none;
+}.print{
+    display: none;
+}
+
+@media print{
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+        display: block;
+    }
+    main{
+        width: 100%;
+        margin: 0;
+    }
+    main .head{
+        display: none;
+        width: 100%;
+    }
+    header{
+        width: -100%;
+        display: none;
+    }
+    section h2{
+        display: none;
+    }
+    section .pesquisa{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    #menu{
+        display: none;
+    }
+    section .pesquisa{
+        display: none;
+    }
+    .print{
+        display: block;
+        text-align: center;
+    }
+    
+}
+@media screen and (orientation: landscape){
+     
+}
+
+@media  screen and (min-width: 0px) and (max-width: 480px){
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        z-index: 6;
+        top: 60px;
+        transition: 0.4s;
+    }
+    
+    nav .logo{
+        display: none;
+    }
+    main{
+        width: 100%;
+        margin-left: 0;
+    }
+    main .head{
+        width: 100%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+    }
+    .detalhe a{
+        
+    }
+
+}
+@media  screen and (min-width: 480px) and (max-width: 601px){
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+        left: -100%;
+        z-index: 6;
+        top: 60px;
+        transition: 0.4s;
+    }
+    nav .logo{
+        display: none;
+    }
+    main{
+        width: 100%;
+        margin-left: 0;
+    }
+    main .head{
+        width: 100%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+    }
+
+
+
+}
+@media  screen and (min-width: 601px) and (max-width: 768px){
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+        position: fixed;
+        width: 50%;
+        left: -100%;
+        z-index: 6;
+        top: 60px;
+        transition: 0.4s;
+    }
+    nav .logo{
+        display: none;
+    }
+    main{
+        width: 100%;
+        margin-left: 0;
+    }
+    main .head{
+        width: 100%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+        
+    }
+}
+@media  screen and (min-width: 769px) and (max-width: 992px){
+
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+        position: fixed;
+        width: 30%;
+        left: -100%;
+        z-index: 6;
+        top: 60px;
+        transition: 0.4s;
+    }
+    nav .logo{
+        display: none;
+    }
+    main{
+        width: 100%;
+        margin-left: 0;
+    }
+    main .head{
+        width: 100%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+        
+    }
+}
+@media  screen and (min-width: 992px) and (max-width: 1200px){
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+       width: 20%;
+    }
+    
+     
+    main{
+        width: 80%;
+        margin-left: 20%;
+    }
+    main .head{
+        width: 80%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+    }
+    .detalhe a{
+        
+    }
+   
+}
+@media  screen and (min-width: 1200px) and (max-width: 1280px){
+    body{
+        width: 100%;
+        background-color:  #f9fcf9;
+    }
+    .conteiner{
+        width: 100%;
+    }
+    header{
+       width: 30%;
+    }
+    
+     
+    main{
+        width: 71%;
+        margin-left: 300px;
+    }
+    main .head{
+        width: 71%;
+        background-color: rgb(0, 140, 255);
+        z-index: 6;
+    }
+    .describe,
+    .descricao{
+        width: 250px;
+        background-color: rgb(0, 140, 255);
+    }
+    .detalhe a{
+        
+    }
+   
+}

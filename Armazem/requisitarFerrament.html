@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrador</title>
+    <link rel="stylesheet" href="../public/css/admin.css">
+    <link rel="stylesheet" href="../public/css/requisitar.css">
+    <link rel="stylesheet" href="../public/fontawesome-free-6.2.1-web/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="#"><img src="../public/images/1672901618319.png" alt=""></a>
+                </div>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house hd"></i>Inicio</a></li>
+                    <li class="Product"><a href="#"><img src="../public/images/produ.png" alt="">Material<img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                        <div class="produtos p"> 
+                            <ul>
+                                <li><a href="produtos.html"><img src="../public/images/produ.png" alt=""></i>Gerir Material</a></li>
+                            </ul>
+                        </div>
+                    
+                    <li class="tools"><a href="#"><img src="../public/images/produ.png" alt="">Ferramentas <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                    <div class="produtos t">
+                        <ul>
+                            <li><a href="Ferramentas.html"><img src="../public/images/produ.png" alt="">Gerir</a></li>
+                            <li><a href="requisitarFerrament.html"><img src="../public/images/produ.png" alt="">Requisitar</a></li>
+                        </ul>
+                    </div>
+                    <li class="supliers"><a href="#"><img src="../public/images/produ.png" alt="">Fornecedores <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                    <div class="produtos f">
+                        <ul>
+                            <li><a href="#"><img src="../public/images/produ.png" alt="">Add Fornecedores</a></li>
+                            <li><a href="#"><img src="../public/images/produ.png" alt="">Gerir Fornecedores</a></li>
+                        </ul>
+                    </div>
+                    <li><a href="#"><img src="../public/images/notification.png" alt="">Notificacoes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="head">
+                 <div class="menu">
+                    <!-- <button class="hmburguer"><img src="../public/images/drop.png" alt=""></button> -->
+                    <button class="hmburguer"><i class="fa-solid fa-bars icon"></i></button>
+                </div>
+                 <div class="user1">
+                    <div class="user notification ">
+                        <button class="us notif"><i class="fa-solid fa-comment"></i><p>0</p></button>
+                        <div class="descricao">
+                        
+                        </div>
+                    </div>
+                    <div class="user notification ">
+                        <button class="us notif"><i class="fa-solid fa-bell"></i><p>2</p></button>
+                        <div class="descricao">
+                            
+                        </div>
+                    </div>
+                    <div class="user out">
+                        <button class="name"><p>Langa</p><i class="fa-solid fa-angle-down"></i></button>
+                        <ul>
+                            <li><a href="#">Sair</a></li>
+                            <li><a href="#">Perfil</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <h2>Requisitar Ferramentas</h2>
+                <div id="menu">
+                    <a href="addFerramentas.html" title="Adicionar Novo Produto">Requisitar</i></a>
+                </div>
+                <div class="pesquisa">
+                    <select name="" id="">
+                        <option value="">5 Registos</option>
+                        <option value="">15 Registos</option>
+                        <option value="">25 Registos</option>
+                        <option value="">Todos Registos</option>
+                    </select>
+                    <input type="text" name="buscar" id="buscar" placeholder="pesquisar requisições">
+                </div>
+                <div class="tabela">
+                    <table>
+                        <tr class="top">
+                            <td>Selecionar</td>
+                            <td>Nome</td>
+                            <td>Ferramenta</td>
+                            <td>Data</td>
+                            <td colspan="2">Action</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" id=""></td>
+                            <td>Luis</td>
+                            <td>Martelo</td>
+                            <td>10/12/2023</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" id=""></td>
+                            <td>Carrinha</td>
+                            <td title="rebarbadeira martelo estencao">rebarbadeira</td>
+                            <td>10/12/2023</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="" id=""></td>
+                            <td>Carrinha</td>
+                            <td title="rebarbadeira martelo estencao">rebarbadeira</td>
+                            <td>10/12/2023</td>
+                            <td title="Detalhes do Produto"><a href="#"><i class="fa-solid fa-info"></i></a></td>
+                            <td title="Editar o Produto"><a href="#"><i class="fa-solid fa-edit"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Action</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a href="#"><i class="fa-solid fa-remove"></i></a></tditle=>
+                        </tr>
+                    </table>
+                </div>
+
+            </section>
+            <footer style="display: flex; justify-content:center; align-items: center; margin-top: 200px;">chesterMacoda&copy;2023</footer>
+        </main>
+        
+    </div>
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/admin.js"></script>
+</body>
+</html>

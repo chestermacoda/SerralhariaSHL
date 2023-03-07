@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'opensas';
+    src: url("../../public/font/OpenSans-Regular.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'opensas';
+    text-decoration: none;
+
+}
+h1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+article{
+    width:94%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+table{
+    width: 100%;
+    /* border-bottom: 1px solid #000; */
+    border-collapse: collapse;
+}table tr{
+    border-collapse: collapse;
+    text-align: center;
+    height: 40px;
+}
+table tr.top{
+    
+    color: #fff;
+    font-weight: 500;
+    background-color:  rgb(8, 132, 248);
+     
+}
+table tr.bottom{
+	
+    color: #fff;
+    font-weight: 500;
+    background-color: rgb(8, 132, 248);
+   
+}
+table tr.top td{
+    font-size: 18px;
+    padding: 10px 0;
+	border-top: none;
+}
+table tr.bottom td{
+    font-size: 18px;
+    padding: 10px 0;
+}
+table tr td{
+    border-top: 1px solid #000;
+    max-width: 180px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+table tr td img{
+    width: 180px;
+    height: 120px;
+}
+table tr td input{
+    border: none;
+    background:none;
+    width: 80px;
+    height: 40px;
+    border: 1px solid #000;
+    margin: 0 4px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+}
+table tr td button.min{
+    border: none;
+    background:none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color: rebeccapurple;
+    border-radius: 4px;
+    cursor: pointer;
+}
+table tr td button.max{
+    border: none;
+    background:none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(8, 132, 248);
+    border-radius: 4px;
+    cursor: pointer;
+}
+table tr td button.Excluir{
+    border: none;
+    background:none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 4px #6d6d6d; */
+    box-shadow: 0px 0px 4px rgb(255, 209, 209); 
+    padding: 6px;
+     text-align: center;
+     /* background-color: red; */
+      
+}
+table tr td button.Excluir img{
+    height: 38px;
+    width: 40px;
+    display: flex;
+     justify-content: center;
+     align-self: center;
+}
+table tr td button.ExcluirTudo{
+    border: none;
+    background:none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    padding: 6px;
+     text-align: center;
+     /* background-color: red; */
+      
+}
+table tr td button.ExcluirTudo img{
+    height: 38px;
+    width: 40px;
+    display: flex;
+     justify-content: center;
+     align-self: center;
+}
+table tr td button.Print{
+    border: none;
+    background:none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+ 
+    padding: 6px;
+     text-align: center;
+     /* background-color: rgb(0, 195, 255); */
+      
+}
+table tr td button.Print img{
+    height: 38px;
+    width: 40px;
+    display: flex;
+     justify-content: center;
+     align-self: center;
+}
+table tr td button.Print:hover{
+    box-shadow: 0px 0px 4px #eee;
+}
+table tr td button.ExcluirTudo:hover{
+    box-shadow: 0px 0px 4px #eee;
+}
+table tr td button.Excluir:hover{
+    box-shadow: 0px 0px 4px rgb(167, 23, 23);
+}
+
