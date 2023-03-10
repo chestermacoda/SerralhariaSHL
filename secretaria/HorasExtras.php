@@ -42,6 +42,7 @@ include_once "config/total.php";
                 <div class="resp"></div>
                 <div class="table-responsive text-nowrap ">
                     <form action="" class="todos">
+                         
                         <table class="table table-bordered table-hover text-center">
                             <thead class="top">
                                 <td>Select</td>
@@ -107,7 +108,7 @@ include_once "config/total.php";
             $(document).on("submit",".todos",function(e){
                 e.preventDefault();
                 var load = "<p class='text-center'><img src='../public/images/load.gif' style='width:40px; height:30px'></p>";
-                $('.tab').html(load); 
+                $('.resp').html(load); 
                 $.ajax({
                     url:  "archives/AddHorasExtras.php",
                     method:"POST",

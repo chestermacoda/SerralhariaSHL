@@ -20,7 +20,7 @@ include_once "../../connect/config.php";
             }
             if($cmd->rowCount() > 0){
                 $saida = '<p class="Sucess">Efectuado Com sucesso</p>';
-                ?><script>setTimeout(function(){location.reload();}, 100);</script><?php
+                ?><script>setTimeout(function(){location.reload();}, 1000);</script><?php
             }else{
                 $saida ='<p class="Error">Falha na Ação</p>';
             }
