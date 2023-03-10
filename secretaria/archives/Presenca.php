@@ -9,7 +9,7 @@ if (isset($_POST['registo'])) {
     $timeOut = date("H:i:s");
 
 
-    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where  data = '$data'  LIMIT $id");
+    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida,p.id as id_presenca  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where  data = '$data'  LIMIT $id");
 
     $dado = $cmd->fetchAll();
 
@@ -44,7 +44,7 @@ if (isset($_POST['registo'])) {
                     <td>' . $d['data'] . '</td>
                     <td><button ' . $disable . ' class="btn btn-outline-primary  entrada" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button></td>
                     <td>' . $btnSaida . '</td>
-                    <td><button class="btn btn-primary"><a href=""><i class="fa-solid fa-edit"></i></a></button></td>
+                    <td><a href="EditarPresenca.php?id=' . $d['id_presenca'] .'" class="btn btn-outline-primary"><i class="fa-solid fa-edit"></i></a></td>
                 </tr>
             
             ';
@@ -64,7 +64,7 @@ if (isset($_POST['registo'])) {
 
 
 
-    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where data = '$data' LIMIT 5");
+    $cmd = $pdo->query("SELECT f.id,f.nome,p.data,p.Entrada,p.Saida,p.id as id_presenca  FROM `presenca` p INNER JOIN funcionarios f ON p.id_funcionario = f.id  where data = '$data' LIMIT 5");
     $dado = $cmd->fetchAll(PDO::FETCH_ASSOC);
 
 
@@ -100,7 +100,7 @@ if (isset($_POST['registo'])) {
                     <td>' . $d['data'] . '</td>
                     <td><button disabled  class="btn btn-outline-primary  entrada" id="' . $d['id'] . '" data-value="' . $timeOut . '"><i class="fa-solid fa-check"></i></button></td>
                     <td>' . $btnSaida . '</td>
-                    <td><a href="EditarPresenca.php?id=' . $d['id'] . '&data=' . $d['data'] . '" class="btn btn-outline-primary"><i class="fa-solid fa-edit"></i></a></td>
+                    <td><a href="EditarPresenca.php?id=' . $d['id_presenca'] .'" class="btn btn-outline-primary"><i class="fa-solid fa-edit"></i></a></td>
                 </tr>
                 
                 ';

@@ -1,10 +1,10 @@
 <?php
 include_once "../connect/config.php";
 include_once "config/total.php"; 
-if(isset($_GET['id']) && isset($_GET['data'])){
+if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $data = $_GET['data'];
-    $dados = $se->FuncioPre($id,$data);
+  
+    $dados = $se->FuncioPre($id);
 }
 ?>
 <!DOCTYPE html>
@@ -38,18 +38,16 @@ if(isset($_GET['id']) && isset($_GET['data'])){
                     <h2>Registar Novo Funcionarios</h2>
                 <?php } ?>
                 <div id="menu">
-                    <a href="funcionarios.php" class="btn btn-primary">Voltar</i></a>
+                    <a href="presencas.php" class="btn btn-primary">Voltar</i></a>
                 </div>
                 <div class="resp"></div> 
                 <form action=""  class="update"  id="addProduto">
                         <div class="col">
                             <label for="">Entrada</label>
-                            <input type="time" name="apelido" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['Entrada']; } ?>" placeholder="Insira o Apelido do funcionario">
+                            <input type="time" name="Entrada" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['Entrada']; } ?>" placeholder="Insira o Apelido do funcionario">
+                            <input type="hidden" name="id" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['id']; } ?>" >
                         </div>
-                        <div class="col">
-                            <label for="">Saida</label>
-                            <input type="time" name="email" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['Saida']; } ?>" placeholder="Insira o E-maill do funcionario">
-                        </div>                      
+                                            
                         <div class="col">
                             <input type="submit" name="add" value="Actualizar" class="btn" id="" >
                         </div>

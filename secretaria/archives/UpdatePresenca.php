@@ -9,20 +9,17 @@ include_once "../../connect/config.php";
     $saida = '';
     
         $Entrada = addslashes($_POST['Entrada']);
-        $Saida = addslashes($_POST['Saida']);
         $id = addslashes($_POST['id']);
-        $data = addslashes($_POST['data']);
+ 
   
 
         
 
         if(empty($Entrada)){
             $erros['e'] = 'Preencha o Campo nome do Funcionario';
-        }elseif(isset($Saida) && empty($Entrada)){
-            $erros['e'] = 'Campo Entrada Não Pode Estar Vazio';
         }else{
             
-            $cmd = $pdo->query("UPDATE presenca SET Entrada = '$Entrada', Saida = '$Saida' WHERE id_funcionario = '$id' and data = '$data' ");
+            $cmd = $pdo->query("UPDATE presenca SET Entrada = '$Entrada' WHERE id = '$id'");
         
             if($cmd->rowCount() > 0){
                     $saida = '<p class="alert alert-success text-center">Actualizado Com sucesso</p>';

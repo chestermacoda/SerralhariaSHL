@@ -28,10 +28,9 @@ class Secretaria{
             return $dados;
         }
 
-        public function FuncioPre($id,$data){
-            $cmd = $this->pdo->prepare("SELECT * FROM presenca where id_funcionario = :n and data = :dat");
+        public function FuncioPre($id){
+            $cmd = $this->pdo->prepare("SELECT * FROM presenca where id = :id");
             $cmd->bindValue(":id",$id);
-            $cmd->bindValue(":dat",$data);
             $cmd->execute();
             $dados = $cmd->fetch();
             return $dados;
