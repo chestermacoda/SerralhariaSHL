@@ -26,7 +26,7 @@ include_once "config/total.php";
                 ?>
             
             <section >
-                <h2 class="h2">Gerir Funcionarios</h2>
+                <h2 class="h2">Gerir Estagiarios</h2>
                 <div class="menu">
                     <a href="addFuncionario.php" class="btn btn-primary">Adicionar Funcionarios</a>
                     <button class="btn btn-primary print"><i class="fa-solid fa-print"></i></button>
