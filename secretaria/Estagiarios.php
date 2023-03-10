@@ -26,9 +26,10 @@ include_once "config/total.php";
                 ?>
             
             <section >
-                <h2 class="h2">Folha de Salario Individual</h2>
+                <h2 class="h2">Gerir Funcionarios</h2>
                 <div class="menu">
-                    <!-- <a href="addFuncionario.php" class="btn btn-primary">Adicionar Funcionarios</a> -->
+                    <a href="addFuncionario.php" class="btn btn-primary">Adicionar Funcionarios</a>
+                    <button class="btn btn-primary print"><i class="fa-solid fa-print"></i></button>
                 </div>
                 <?php include_once "../print.php" ?>
                 <div class="pesquisa row m-2">
@@ -44,9 +45,11 @@ include_once "config/total.php";
                     <table class="table table-bordered table-striped table-hover text-center">
                         <thead class="top">
                             <td>ID</td>
-                            <td>Nome</td>
-                            <td>Apelido</td>
+                            <td>Nome Completo</td>
+                            <td>E-mail</td>
                             <td>Area de Formação</td>
+                            <td>Data Inicio</td>
+                            <td>Data Fim</td>
                             <td>status</td>
                             <td colspan="2">Action</td>
                         </thead>
@@ -60,7 +63,7 @@ include_once "config/total.php";
     </div>
     <script src="../public/js/jquery.js"></script>
     <script src="../public/js/admin.js"></script>
-    <script>var url = "archives/TabelaSalario.php";</script>
+    <script>var url = "archives/TabelaEstagiar.php";</script>
     <script src="../public/js/funcionarios.js"></script>
 </body>
 </html>

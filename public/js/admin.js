@@ -42,6 +42,10 @@ $(document).ready(function(){
         $(".p").slideToggle();
     })
 
+    $(".salario").click(function(){
+        $(".s").slideToggle();
+    })
+
     $(".supliers").click(function(){
         // fornecedor
         $(".f").slideToggle();

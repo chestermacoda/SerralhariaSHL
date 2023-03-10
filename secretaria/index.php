@@ -52,6 +52,7 @@ $dados3 = $se->StatusPresenca();
                             </div>
                         </a>
                           -->
+                          
                         <a href="Material.php">
                             <div class="top">
                                 <div class="img">
@@ -94,7 +95,7 @@ $dados3 = $se->StatusPresenca();
                                 <p>Total Presenças Diarias</p>
                             </div>
                         </a>
-                        <a href="presencas.php">
+                        <a href="Estagiarios.php">
                             <div class="top">
                                 <div class="img">
                                     <i class="fa-solid fa-book"></i>
@@ -108,7 +109,7 @@ $dados3 = $se->StatusPresenca();
                                 <p>Total Presenças Diarias</p>
                             </div>
                         </a>
-                        
+                        <?php echo date('D'); ?>
                 </article>
             </section>
         </main>

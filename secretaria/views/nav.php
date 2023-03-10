@@ -9,7 +9,17 @@
                                     <div class="produtos f">
                                         <ul>
                                             <li><a href="funcionarios.php"><i class="fa-regular fa-user hd"></i>Gerir Funcionarios</a></li>
-                                            <li><a href="Salario.php"><i class="fa-solid fa-university hd"></i>Salario</a></li>
+                                            <li><a href="Estagiarios.php"><i class="fa-solid fa-user hd"></i>Gerir Estagiarios</a></li>
+                                            
+                                            
+                                        </ul>
+                                    </div>
+                                <li class="salario"><a href="#"><i class="fa-sharp fa-solid fa-money-bill-trend-up hd"></i>Salario <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
+                                    <div class="produtos s">
+                                        <ul>
+                                            
+                                            <li><a href="Salario.php"><i class="fa-solid fa-university hd"></i>Folha Salarial Individual</a></li>
+                                            <li><a href="SalarioMensal.php"><i class="fa-solid fa-university hd"></i>Folha Salarial Global</a></li>
                                         </ul>
                                     </div>
                                 <li class="tools"><a href="#"><i class="fa-solid fa-bookmark hd"></i>Presenças <img src="../public/images/angle-arrow-down.png" alt="" class="down"></a></li>
