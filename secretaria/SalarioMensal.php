@@ -67,14 +67,17 @@ include_once "config/total.php";
 
                 <?php
 
-                    $cmd = $pdo->prepare("SELECT  f.nome,f.apelido,f.Salario,f.id, p.id, p.data,p.Entrada,p.Saida,p.HorasExtras,COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario  where p.id=73 GROUP BY id_funcionario");
-                    $cmd->execute();
-                    $dados = $cmd->fetch();
-                    var_dump($dados);
-                    $extras = explode(":",$dados['HorasExtras']);
-                    $horasnomal = 17;
-                    echo "<br>";
-                    echo $extras[0] - $horasnomal;
+                    // $cmd = $pdo->prepare("SELECT  f.nome,f.apelido,f.Salario,f.id, p.id, p.data,p.Entrada,p.Saida,p.HorasExtras,COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario  where p.id=73 GROUP BY id_funcionario");
+                    // $cmd->execute();
+                    // $dados = $cmd->fetch();
+                    // echo "<pre>";
+                    // var_dump($dados);
+                    // echo "</pre>";
+                    
+                    // $extras = explode(":",$dados['HorasExtras']);
+                    // $horasnomal = 17;
+                    // echo "<br>";
+                    // echo $extras[0] - $horasnomal;
                     
                 ?>
             </section>

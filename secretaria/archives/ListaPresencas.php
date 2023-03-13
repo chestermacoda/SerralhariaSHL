@@ -5,7 +5,7 @@ $saida = '';
 if(!empty($_POST['data1']) and empty($_POST['data2'])){
     // $saida .= 'um';
     $data = $_POST['data1'];
-    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data = '$data'");
+    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo,p.HorasExtras FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data = '$data'");
     $cmd->execute();
     $All = $cmd->fetchAll();
     if($cmd->rowCount() > 0){
@@ -16,6 +16,7 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
                 <td>'.$k['nome'].'</td>
                 <td>'.$k['Entrada'].'</td>
                 <td>'.$k['Saida'].'</td> 
+                <td>'.$k['HorasExtras'].'</td> 
                 <td>'.$k['data'].'</td>
             </tr>
         
@@ -32,7 +33,7 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
 }elseif(!empty($_POST['data1']) and !empty($_POST['data2'])){
     $data = $_POST['data1'];
     $data1 = $_POST['data2'];
-    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data between '$data' and '$data1'");
+    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo,p.HorasExtras FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data between '$data' and '$data1'");
     $cmd->execute();
     $All = $cmd->fetchAll();
     if($cmd->rowCount() > 0){
@@ -43,6 +44,7 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
                 <td>'.$k['nome'].'</td>
                 <td>'.$k['Entrada'].'</td>
                 <td>'.$k['Saida'].'</td> 
+                <td>'.$k['HorasExtras'].'</td> 
                 <td>'.$k['registo'].'</td>
             </tr>
         
@@ -58,7 +60,7 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
     }
 }else{
     $data = date('Y-m-d');
-    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data = '$data'");
+    $cmd = $pdo->prepare("SELECT f.nome,p.id,p.data,p.Entrada,p.Saida, p.registo,p.HorasExtras FROM presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where data = '$data'");
     $cmd->execute();
     $All = $cmd->fetchAll();
     if($cmd->rowCount() > 0){
@@ -69,6 +71,7 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
                 <td>'.$k['nome'].'</td>
                 <td>'.$k['Entrada'].'</td>
                 <td>'.$k['Saida'].'</td> 
+                <td>'.$k['HorasExtras'].'</td> 
                 <td>'.$k['data'].'</td>
             </tr>
         

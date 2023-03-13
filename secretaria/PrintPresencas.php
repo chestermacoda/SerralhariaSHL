@@ -56,6 +56,7 @@ $dados = $con->material();
                             <td>Nome</td>
                             <td>Entrada</td>
                             <td>Saida</td>
+                            <td>Horas Extras</td>
                             <td>Data e Hora</td>
                         </thead>
                         <tbody class="tab"></tbody>                        

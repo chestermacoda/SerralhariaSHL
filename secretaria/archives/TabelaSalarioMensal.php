@@ -24,18 +24,36 @@ if(isset($_POST['registo'])){
     }
 
 }else{
-    $cmd = $pdo->prepare("SELECT  f.nome,f.apelido,f.Salario,f.id, p.data,p.Entrada,p.Saida,COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario  where p.Status = 0 GROUP BY id_funcionario");
+    $cmd = $pdo->prepare("SELECT  f.nome,f.apelido,f.Salario,f.id, p.data,p.Entrada,p.Saida FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario  GROUP BY id_funcionario");
     $cmd->execute();
     $dados = $cmd->fetchAll();
     foreach($dados as $k ){
+        $id = $k['id'];
+        // SCRIPT PARA CONTABILIZACAO DAS FALTAS POR ID
+        $cmd = $pdo->query("SELECT COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where p.Status = 0 and p.id_funcionario =  '$id' GROUP BY id_funcionario");
+        $dads = $cmd->fetch();
+
+        $cmd = $pdo->query("SELECT  COUNT(p.HorasExtras) AS conta, SUM(p.HorasExtras) as horas FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where p.HorasExtras IS NOT NULL and p.id_funcionario =  '$id' GROUP BY id_funcionario");
+        $das = $cmd->fetch();
+
+        $Hextras = '';
+        if(!empty($das['horas'])){
+
+            $extras = explode(":",$das['horas']);
+            $horasnomal = 17;
+            $Hextras = $extras[0] - ($das['conta']*$horasnomal);
+        }else{
+            $Hextras = '0';
+        }
         $saida .='
             <tr>
                 <td>'.$k['id'].'</td>
                 <td>'.$k['nome']. ' '.$k['apelido'].'</td>
                 <td>'.$k['Salario'].'</td>
-                <td>'.$k['Falta'].'</td>
+                <td>'.$dads['Falta'].'</td>
                 <td></td>
                 <td></td>
+                <td>'.$Hextras.'h</td>
                 <td></td>
                 <td></td>
             </tr>
@@ -43,7 +61,7 @@ if(isset($_POST['registo'])){
         ';
     }
 }
-
+// SELECT  f.nome,f.apelido,f.Salario,f.id, p.data,p.Entrada,p.Saida,COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario  where p.Status = 0 GROUP BY id_funcionario
 echo $saida;
 ?>
 
