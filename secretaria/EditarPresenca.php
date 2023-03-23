@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
                 <form action=""  class="update"  id="addProduto">
                         <div class="col">
                             <label for="">Entrada</label>
-                            <input type="time" name="Entrada" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['Entrada']; } ?>" placeholder="Insira o Apelido do funcionario">
+                            <input type="time" name="Entrada" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['Entrada']; } ?>">
                             <input type="hidden" name="id" class="form-control" id="" value="<?php if(isset($_GET['id'])){ echo $dados['id']; } ?>" >
                         </div>
                                             

@@ -3,6 +3,12 @@ include_once "config/total.php";
 $dados1 = $se->SaidaAutomatica();
 $dados2 = $se->StatusFaltou();
 $dados3 = $se->StatusPresenca();
+$datsss = $se->FormatarDiaSemana();
+$datsss = $se->SaidaAutomaticaFinalSemana();
+$datsss = $se->Domingos();
+$datsss = $se->CustodiaAuxilio();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,12 +93,26 @@ $dados3 = $se->StatusPresenca();
                                     <i class="fa-solid fa-book"></i>
                                 </div>
                                 <div class="desc">
-                                    <h4 class="title">Total Presenças</h4>
-                                    <p><?=$totalM?></p>
+                                    <h4 class="title">Funcionarios Presentes</h4>
+                                    <p><?=$Presenca?></p>
                                 </div>
                             </div> 
                             <div class="bottom">
                                 <p>Total Presenças Diarias</p>
+                            </div>
+                        </a>
+                        <a href="presencas.php">
+                            <div class="top">
+                                <div class="img">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div class="desc">
+                                    <h4 class="title">Funcionarios Ausentes</h4>
+                                    <p><?=$Ausencia?></p>
+                                </div>
+                            </div> 
+                            <div class="bottom">
+                                <p>Total Ausentes Diarias</p>
                             </div>
                         </a>
                         <a href="Estagiarios.php">
@@ -109,7 +129,7 @@ $dados3 = $se->StatusPresenca();
                                 <p>Total Presenças Diarias</p>
                             </div>
                         </a>
-                        <?php echo date('D'); ?>
+                        <!-- <?php echo date('D'); ?> -->
                 </article>
             </section>
         </main>

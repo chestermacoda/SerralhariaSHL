@@ -57,7 +57,7 @@ include_once "config/total.php";
                             <td>Faltas Nao J.</td>
                             <td>Horas Extras</td>
                             <td>INSS</td>
-                            <td>Salario Final</td>
+                            <td>Salario Liquido</td>
                         </thead>
                         <tbody class="tab">
                             
@@ -82,10 +82,54 @@ include_once "config/total.php";
                 ?>
             </section>
         </main>
-    </div>
+    </div> 
     <script src="../public/js/jquery.js"></script>
     <script src="../public/js/admin.js"></script>
     <script>var url = "archives/TabelaSalarioMensal.php";</script>
     <script src="../public/js/funcionarios.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#buscar').keyup(function(e){
+            e.preventDefault();
+                // alert("bem vindo ao ajax")
+            var valor = $(this).val().toLowerCase();
+
+            $('.tab tr').filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1)
+            })
+
+            })
+            $(document).on("click",".print",function(e){
+                e.preventDefault();
+                window.print()
+            })
+
+            $(document).on("click",".busca",function(e){
+                e.preventDefault();
+                 
+                var data1 = $("#busca1").val();
+                var data2 = $("#busca2").val()
+                // alert(data1 + data2)
+                $.ajax({
+                    url: "archives/TabelaSalarioMensal.php",
+                    method: "POST",
+                    data:{
+                        data1 : data1,
+                        data2 : data2
+                    }
+                }).done(function(data){
+                    $(".tab").html(data)
+                })
+            })
+           
+            // $.ajax({
+            //         url: "archives/ListaPresencas.php",
+            //         method: "GET"
+            //     }).done(function(data){
+            //         $(".tab").html(data)
+            // })
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "opensas";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+} 
+*{
+    font-family: "opensas";
+    /* font-family: "roboto"; */
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    width:100%;
+}
+nav{
+    width: 100%;
+    display: block;
+    text-align: center;
+    justify-content: space-between;
+}
+nav .top{
+    margin-bottom: 10px;
+}
+main{
+    width: 98%;
+    /* background-color: black; */
+    margin: 0 auto;
+    /* text-align: center; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* padding: 0 10px 20px; */
+}
+table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: 'opensas';
+}
+table tr td{
+    border: 1px solid #000;
+    height: 26px;
+}
+table thead tr td{
+    border-bottom: 2px solid #000;
+}

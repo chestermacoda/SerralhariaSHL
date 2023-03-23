@@ -28,7 +28,14 @@ if(isset($_POST['registo'])){
     $cmd = $pdo->prepare("SELECT * FROM funcionarios  LIMIT 5 ");
     $cmd->execute();
     $dados = $cmd->fetchAll();
+
+    
     foreach($dados as $k ){
+        if($k['status'] == 'on'){
+            $yes = '<i class="fa-solid fa-eye"></i>';
+        }else{
+            $yes = '<i class="fa-solid fa-eye-slash"></i>';
+        }
         $saida .='
             <tr>
                 <td>'.$k['id'].'</td> 
@@ -36,7 +43,7 @@ if(isset($_POST['registo'])){
                 <td>'.$k['apelido'].'</td>
                 <td>'.$k['email'].'</td>
                 <td>'.$k['Area'].'</td>
-                <td>'.$k['status'].'</td>
+                <td>'.$yes.'</td>
                 <td title="Detalhes do Produto"><a href="datelhes.php?id='.$k['id'].'" class="btn btn-info btn-sm"><i class="fa-solid fa-info"></i></a></td>
                 <td title="Editar o Produto"><a href="addFuncionario.php?id='.$k['id'].'" class="btn btn-primary btn-sm"><i class="fa-solid fa-edit"></i></a></td>
             </tr>

@@ -1,0 +1,83 @@
+<!-- <?php 
+include_once "../connect/config.php"; 
+    
+    $dados='' ; 
+    $saida = '';
+    if(isset($_GET['id'])){ 
+        $id=$_GET['id']; 
+        $dados = $se->FuncioInfo($id);
+
+    }
+
+            $saida .= '<td>'.$dados['nome'].'</td>';
+            $saida .= '<td>'.$dados['bI'].'</td>';
+            $saida .= '<td>'.$dados['EstadoCivil'].'</td>';
+            $saida .= '<td>'.$dados['INSS'].'</td>';
+            $saida .= '<td>'.$dados['Nuit'].'</td>';
+            
+        
+    
+
+
+    ?> -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="public/css/salarioGloabal.css">
+    </head>
+
+    <body>
+        <div class="content">
+            <header>
+                <nav>
+                    <div class="top">
+                        <img src="public/images/1672901618319.jpg" style="height: 140px; margin-bottom:20px" alt="">
+                        <p>Rua Marcelino dos Santos Q 11, N: 102-Liberdade</p>
+                        <p>Email: HortencioLanga@gmail.com</p>
+                        <h4>Folha Salarial da Empresa SHL Metalomecanica</h4>
+                    </div>
+                     
+                </nav>
+
+            </header>
+            <main>
+                 <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nome Completo</td>
+                            <td>Salario</td>
+                            <td>Faltas</td>
+                            <td>Faltas J</td>
+                            <td>Faltas N J</td>
+                            <td>Atraso</td>
+                            <td>Horas Extras</td>
+                            <td>INSS</td>
+                            <td>Salario Liquido</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nome Completo</td>
+                            <td>Salario</td>
+                            <td>Faltas</td>
+                            <td>Faltas J</td>
+                            <td>Faltas N J</td>
+                            <td>Atraso</td>
+                            <td>Horas Extras</td>
+                            <td>INSS</td>
+                            <td>Salario Liquido</td>
+                        </tr>
+                    </tbody>
+                 </table>
+            </main>
+        </div>
+    </body>
+
+    </html>

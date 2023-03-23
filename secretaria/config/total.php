@@ -21,9 +21,13 @@ $said = $cmd->fetchAll();
 
 
 $data = date('Y-m-d' );
-$Tmate = $pdo->query("SELECT * FROM presenca where data = '$data'");
+$Tmate = $pdo->query("SELECT * FROM presenca where data = '$data' and Entrada IS NOT NULL");
 $m = $Tmate->fetchAll();
-$totalM = count($m);
+$Presenca = count($m);
+
+$Tmate = $pdo->query("SELECT * FROM presenca where data = '$data' and Entrada IS NULL ");
+$m = $Tmate->fetchAll();
+$Ausencia = count($m);
 
 
 $Tmate = $pdo->query("SELECT * FROM material");

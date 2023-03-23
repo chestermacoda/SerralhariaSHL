@@ -33,6 +33,7 @@ include_once "config/total.php";
                 <div class="menu">
                     <a href="addFuncionario.php" class="btn btn-primary">Adicionar Funcionarios</a>
                     <button class="btn btn-primary lista" data-value="lista" data-id="<?= date("Y-m-d") ?>">Adicionar Lista Presença</button>
+                    <span class="finalSemana"></span>
                 </div>
                 <div class="pesquisa row m-2 mr-2">
                     <select name="registo" id="registo" class="form-control me-2">
@@ -72,8 +73,10 @@ include_once "config/total.php";
             </section>
         </main>
     </div>
+    <?php include("views/ModalPresenca.php"); ?>
     <script src="../public/js/jquery.js"></script>
     <script src="../public/js/admin.js"></script>
+    <script src="../public/js/bootstrap.bundle.js"></script>
     <script>
         var url = "archives/Presenca.php";
         var table = "archives/addPresenca.php";
@@ -97,6 +100,21 @@ include_once "config/total.php";
 
 
         $(document).ready(function() {
+
+
+            // script para a lista de novos usuarios
+            function TabelaFinal(){
+                $.ajax({
+                    url: 'archives/ListaPresencaFinalsemana.php',
+                    method:"GET",
+                }).done(function(data){
+                    $(".Final").html(data)
+                    // alert(data)
+                })
+            }
+            setTimeout(TabelaFinal, 100);
+
+
             $(document).on("click", ".lista", function(e) {
                 e.preventDefault();
                 var lista = $(this).attr("data-value");
@@ -114,6 +132,25 @@ include_once "config/total.php";
                     // alert(data)
                 })
             })
+
+            // adicionar a lista dos finais de semana
+            $(document).on("click", ".adicionar", function(e) {
+                e.preventDefault();
+                var data = $("#DataFinal").val();
+                // var data = $(this).attr("data-id");
+                // alert(data)
+                $.ajax({
+                    url: 'archives/ListaFinalSemana.php',
+                    method: "POST",
+                    data: {
+                        data: data,
+                    }
+                }).done(function(data) {
+                    // $(".resp").html(data)
+                    alert(data)
+                    setTimeout(TabelaFinal, 100);
+                })
+            })
             $(document).on("submit",".todos",function(e){
                 e.preventDefault();
                 // alert("presenca")
@@ -128,6 +165,40 @@ include_once "config/total.php";
                     $(".resp").html(data)
                 })
             })
+
+
+            $(document).on("submit",".FinaldeSemana",function(e){
+                e.preventDefault();
+                // alert("presenca")
+                $.ajax({
+                    url:  'archives/addPresencaFinalSemana.php',
+                    method:"POST",
+                    data: new FormData(this), 
+                    contentType: false,
+                    cache: false,
+                    processData: false, 
+                }).done(function(data){
+                    
+                    if(data == 'Efectuado Com sucesso'){
+                        $(".resps").html("<p class='alert alert-success text-center mx-2'>"+ data+ "</p>")
+                        setTimeout(function(){location.reload();}, 1000)
+                        setTimeout(FinalSemana,100)
+                    }else{
+                        alert(data)
+                    }
+                })
+            })
+
+             function FinalSemana(){
+                $.ajax({
+                    url:  "archives/buttonPresenca.php",
+                    method:"GET"
+                     
+                }).done(function(data){
+                    $(".finalSemana").html(data)
+                })
+             }
+             setTimeout(FinalSemana,100)
         })
     </script>
 </body>

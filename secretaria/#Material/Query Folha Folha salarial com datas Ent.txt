@@ -1,0 +1,2 @@
+Query Folha Folha salarial com datas Entre
+SELECT COUNT(p.Status) as Falta FROM  presenca p INNER JOIN funcionarios f ON f.id = p.id_funcionario where p.Status = 0 and p.id_funcionario =  3 AND data BETWEEN '2023-03-17' and '2023-03-17'  GROUP BY id_funcionario
