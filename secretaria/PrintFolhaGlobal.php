@@ -31,7 +31,7 @@ if (isset($_GET['data'])) {
         $Hextras = '';
         $SalarioFinal = $k['Salario'];
         $valor = '';
-        // $SalarioComBonus = '0';
+        $SalarioComBonus = '0';
         if (!empty($das['horas'])) {
 
             $extras = explode(":", $das['horas']);
@@ -57,7 +57,7 @@ if (isset($_GET['data'])) {
             $MenosFaltas = $mes - $falta;
             $SalarioFinal = $GanhoDiario * $MenosFaltas;
         }
-        if ($SalarioFinal > 1) {
+        if ($valor > 1) {
             $SalarioComBonus = $SalarioFinal + $valor;
         }
         $Corte = 0;
