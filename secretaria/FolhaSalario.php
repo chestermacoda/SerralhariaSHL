@@ -68,9 +68,11 @@ include_once "../connect/config.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="../public/css/salario.css">
+        <link rel="stylesheet" href="../public/fontawesome-free-6.2.1-web/css/all.min.css">
     </head>
 
     <body>
+    <button class="btn" onclick="clicks()"><i class="fa-solid fa-print"></i></button>
     <div class="content">
             <header>
                 <nav>
@@ -164,7 +166,7 @@ include_once "../connect/config.php";
                         <p><span>Salario Liquido : </span> <?=number_format($dados['Salario'],2)?> mt</p>
                     </article>
                     <article class="salario1">
-                        <p><span>Salario Liquido Descontado : </span> <?=number_format($SalarioFinal,2)?> mt</p>
+                        <p><span>Salario Descontado : </span> <?=number_format($SalarioFinal,2)?> mt</p>
                     </article>
                 </section>
 
@@ -173,3 +175,13 @@ include_once "../connect/config.php";
     </body>
 
     </html>
+    <script>
+    var btn = document.querySelector('.btn');
+
+    function clicks() {
+        // alert("bem vindo");
+        btn.style.display = 'none'
+        window.print()
+
+    }
+</script>

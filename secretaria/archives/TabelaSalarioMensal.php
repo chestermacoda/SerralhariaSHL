@@ -120,14 +120,41 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
 
         $Hextras = '';
         $SalarioFinal = $k['Salario'];
+        $valorHoraExtra = '';
+        $valor = '';
+        $Corte = '';
+
         if(!empty($das['horas'])){
 
             $extras = explode(":",$das['horas']);
             $horasnomal = 17;
             $Hextras = $extras[0] - ($das['conta']*$horasnomal);
+
+            $mes = 30;
+            
+            $GanhoDiario = $SalarioFinal / $mes;
+            $ValorPorHora = $GanhoDiario / 9;
+            $valorHoraExtra = ($ValorPorHora +0.5*100) * $Hextras;
+            
+
+            $valor = number_format($valorHoraExtra,2);
+            
         }else{
             $Hextras = '0';
+            $valor = '0';
         }
+
+
+
+
+        if(!empty($k['Salario'])){
+            $entrada = 7;
+            $extras = explode(":",$k['Entrada']);
+            $Corte = $extras[0];
+        }
+
+
+
         
         if(!empty($dads['Falta'])){
             $salario = $k['Salario'];
@@ -155,17 +182,20 @@ if(!empty($_POST['data1']) and empty($_POST['data2'])){
             // Feriado
 
         }
+
+        
+
         $saida .='
             <tr>
                 <td>'.$k['id'].'</td>
                 <td>'.$k['nome']. ' '.$k['apelido'].'</td>
                 <td>'.$k['Salario'].'</td>
                 <td>'.$dads['Falta'].'</td>
-                <td></td>
-                <td></td>
+                <td>'.$Corte.'</td>
                 <td>'.$Hextras.'h</td>
                 <td></td>
-                <td>'.$SalarioFinal.'</td>
+                <td>'.$valor.'</td>
+                <td>'.number_format($SalarioFinal,2).'</td>
             </tr>
         
         ';

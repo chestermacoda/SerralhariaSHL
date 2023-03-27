@@ -226,3 +226,15 @@ main{
     font-weight: bold;
     text-transform: uppercase;
 }
+.btn{
+    margin: 10px;
+    background:none;
+    padding: 10px 12px;
+    outline: none;
+    border: none;
+    background-color: #07caec;
+    border-radius: 6px;
+}
+.btn i{
+    font-size: 14px;
+}

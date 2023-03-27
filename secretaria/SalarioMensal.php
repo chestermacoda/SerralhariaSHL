@@ -54,11 +54,11 @@ include_once "config/total.php";
                             <td>Nome Completo</td>
                             <td>Salario</td>
                             <td>Faltas</td>
-                            <td>Faltas J.</td>
-                            <td>Faltas Nao J.</td>
+                            <td>Atraso</td>
                             <td>Horas Extras</td>
                             <td>INSS</td>
-                            <td>Salario Liquido</td>
+                            <td>Bonus</td>
+                            <td>Salario</td>
                         </thead>
                         <tbody class="tab">
                             
