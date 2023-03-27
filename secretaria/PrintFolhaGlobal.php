@@ -60,6 +60,12 @@ if (isset($_GET['data'])) {
         if ($SalarioFinal > 1) {
             $SalarioComBonus = $SalarioFinal + $valor;
         }
+        $Corte = 0;
+        if(!empty($k['Salario'])){
+            $entrada = 7;
+            $extras = explode(":",$k['Entrada']);
+            $Corte = 0;
+        }
         $saida .= '
             <tr>
                  
@@ -68,7 +74,7 @@ if (isset($_GET['data'])) {
                 <td>' . $dads['Falta'] . '</td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>'.$Corte.'</td>
                 <td>' . $Hextras . 'h</td>
                 <td></td> 
                 <td>' . $valor . '</td> 
