@@ -29,7 +29,8 @@ include_once "config/total.php";
                 <h2 class="h2">Folha de Salario Global</h2>
                 <div class="menu">
                     <a href="addFuncionario.php" class="btn btn-primary">Adicionar Funcionarios</a>
-                    <button class="btn btn-primary print"><i class="fa-solid fa-print"></i></button>
+                    <a href="PrintFolhaGlobal.php?data=<?= date('Y-m-d')?>" class="btn btn-primary"><i class="fa-solid fa-print"></i></a>
+                    <!-- <button class="btn btn-primary bts"   type="button"  data-bs-toggle="modal" data-bs-target="#Presenca"><i class="fa-solid fa-print"></i></button> -->
                 </div>
                 <?php include_once "../print.php" ?>
                 <div class="pesquisa row m-2 d-flex">
@@ -83,7 +84,9 @@ include_once "config/total.php";
             </section>
         </main>
     </div> 
+    <?php include("views/ModalSalario.php"); ?>
     <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/bootstrap.bundle.js"></script>
     <script src="../public/js/admin.js"></script>
     <script>var url = "archives/TabelaSalarioMensal.php";</script>
     <script src="../public/js/funcionarios.js"></script>
@@ -129,6 +132,21 @@ include_once "config/total.php";
             //     }).done(function(data){
             //         $(".tab").html(data)
             // })
+
+
+
+            // $(document).on("click",".bts",function(e){
+            //     e.preventDefault();
+            //     //  alert("bem vindo")
+                
+            //     $.ajax({
+            //         url: "PrintFolhaGlobal.php",
+            //         method: "POST",
+            //     }).done(function(data){
+            //         $(".valor").html(data)
+            //     })
+            // })
+           
         })
     </script>
 </body>
